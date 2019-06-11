@@ -1,18 +1,51 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Cannon.tscn" type="PackedScene" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 476, 10 )
+extents = Vector2( 300, 10 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 70, 10 )
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Cannon" parent="." instance=ExtResource( 1 )]
-position = Vector2( 518, 347 )
+position = Vector2( 518.098, 367.855 )
+velocity = 85.0
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2( -1, 316 )
+[node name="floor" type="StaticBody2D" parent="."]
+position = Vector2( 500, 500 )
+collision_layer = 4
+collision_mask = 3
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 520, 96 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor"]
 shape = SubResource( 1 )
+
+[node name="wall_left" type="StaticBody2D" parent="."]
+position = Vector2( 210, 420 )
+rotation = 1.5708
+collision_layer = 4
+collision_mask = 3
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall_left"]
+shape = SubResource( 2 )
+
+[node name="wall_right" type="StaticBody2D" parent="."]
+position = Vector2( 790, 420 )
+rotation = 1.5708
+collision_layer = 4
+collision_mask = 3
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall_right"]
+shape = SubResource( 2 )
+

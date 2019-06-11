@@ -7,7 +7,10 @@
 extents = Vector2( 32, 32 )
 
 [node name="Cannon" type="KinematicBody2D"]
+collision_mask = 4
 script = ExtResource( 1 )
+gravity = 50.0
+velocity = 50.0
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
@@ -15,5 +18,21 @@ texture = ExtResource( 2 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
-[node name="Position2D" type="Position2D" parent="."]
-position = Vector2( 0, -65 )
+[node name="pos_left_cannon" type="Position2D" parent="."]
+position = Vector2( -37, -20 )
+
+[node name="pos_right_cannon" type="Position2D" parent="."]
+position = Vector2( 37, -20 )
+
+[node name="ray_right" type="RayCast2D" parent="."]
+position = Vector2( 32, 0 )
+enabled = true
+collision_mask = 4
+collide_with_areas = true
+
+[node name="ray_left" type="RayCast2D" parent="."]
+position = Vector2( -32, 0 )
+enabled = true
+collision_mask = 4
+collide_with_areas = true
+
