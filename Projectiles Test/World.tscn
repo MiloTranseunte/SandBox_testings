@@ -25,8 +25,19 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="floor"]
 shape = SubResource( 1 )
 
+[node name="ceiling" type="StaticBody2D" parent="."]
+position = Vector2( 500, 300 )
+collision_layer = 4
+collision_mask = 3
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ceiling"]
+shape = SubResource( 1 )
+
 [node name="wall_left" type="StaticBody2D" parent="."]
-position = Vector2( 210, 420 )
+position = Vector2( 150, 420 )
 rotation = 1.5708
 collision_layer = 4
 collision_mask = 3
@@ -38,7 +49,7 @@ __meta__ = {
 shape = SubResource( 2 )
 
 [node name="wall_right" type="StaticBody2D" parent="."]
-position = Vector2( 790, 420 )
+position = Vector2( 850, 420 )
 rotation = 1.5708
 collision_layer = 4
 collision_mask = 3

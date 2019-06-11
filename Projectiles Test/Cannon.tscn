@@ -26,12 +26,14 @@ position = Vector2( 37, -20 )
 
 [node name="ray_right" type="RayCast2D" parent="."]
 position = Vector2( 32, 0 )
+rotation = 3.14159
 enabled = true
 collision_mask = 4
 collide_with_areas = true
 
 [node name="ray_left" type="RayCast2D" parent="."]
 position = Vector2( -32, 0 )
+rotation = 3.14159
 enabled = true
 collision_mask = 4
 collide_with_areas = true
