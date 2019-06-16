@@ -6,7 +6,7 @@ const KNIFE = preload("res://knife.tscn")
 export (float) var angle = 45
 export (float) var shoot_force = 50
 
-export (float) var gravity = 20
+export (float) var gravity = 100
 export (float) var velocity = 20
 export (Vector2) var motion = Vector2()
 
